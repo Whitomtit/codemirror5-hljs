@@ -46,7 +46,7 @@
             ? switchState(source, setState, chompMultiComment(1))
             : (char === '[' && source.match('glsl|'))
                 ? switchState(source, setState, chompGlsl)
-                : 'builtin';
+                : 'built_in';
         }
 
         if (char === '\'')

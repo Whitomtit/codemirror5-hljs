@@ -147,7 +147,7 @@ CodeMirror.defineMode("fortran", function() {
             return 'keyword';
     }
     if (builtins.hasOwnProperty(word) || dataTypes.hasOwnProperty(word)) {
-            return 'builtin';
+            return 'built_in';
     }
     return "variable";
   }

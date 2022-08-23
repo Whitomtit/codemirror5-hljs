@@ -190,27 +190,27 @@ CodeMirror.defineMIME('text/x-ocaml', {
     'when': 'keyword',
 
     // builtins
-    'raise': 'builtin',
-    'failwith': 'builtin',
-    'true': 'builtin',
-    'false': 'builtin',
+    'raise': 'built_in',
+    'failwith': 'built_in',
+    'true': 'built_in',
+    'false': 'built_in',
 
     // Pervasives builtins
-    'asr': 'builtin',
-    'land': 'builtin',
-    'lor': 'builtin',
-    'lsl': 'builtin',
-    'lsr': 'builtin',
-    'lxor': 'builtin',
-    'mod': 'builtin',
-    'or': 'builtin',
+    'asr': 'built_in',
+    'land': 'built_in',
+    'lor': 'built_in',
+    'lsl': 'built_in',
+    'lsr': 'built_in',
+    'lxor': 'built_in',
+    'mod': 'built_in',
+    'or': 'built_in',
 
     // More Pervasives
-    'raise_notrace': 'builtin',
-    'trace': 'builtin',
-    'exit': 'builtin',
-    'print_string': 'builtin',
-    'print_endline': 'builtin',
+    'raise_notrace': 'built_in',
+    'trace': 'built_in',
+    'exit': 'built_in',
+    'print_string': 'built_in',
+    'print_endline': 'built_in',
 
      'int': 'type',
      'float': 'type',
@@ -220,7 +220,7 @@ CodeMirror.defineMIME('text/x-ocaml', {
      'unit': 'type',
 
      // Modules
-     'List': 'builtin'
+     'List': 'built_in'
   }
 });
 
@@ -301,19 +301,19 @@ CodeMirror.defineMIME('text/x-fsharp', {
     'volatile': 'keyword',
 
     // builtins
-    'List': 'builtin',
-    'Seq': 'builtin',
-    'Map': 'builtin',
-    'Set': 'builtin',
-    'Option': 'builtin',
-    'int': 'builtin',
-    'string': 'builtin',
-    'not': 'builtin',
-    'true': 'builtin',
-    'false': 'builtin',
+    'List': 'built_in',
+    'Seq': 'built_in',
+    'Map': 'built_in',
+    'Set': 'built_in',
+    'Option': 'built_in',
+    'int': 'built_in',
+    'string': 'built_in',
+    'not': 'built_in',
+    'true': 'built_in',
+    'false': 'built_in',
 
-    'raise': 'builtin',
-    'failwith': 'builtin'
+    'raise': 'built_in',
+    'failwith': 'built_in'
   },
   slashComments: true
 });
@@ -347,11 +347,11 @@ CodeMirror.defineMIME('text/x-sml', {
     'false': 'keyword',
 
     // types
-    'int': 'builtin',
-    'real': 'builtin',
-    'string': 'builtin',
-    'char': 'builtin',
-    'bool': 'builtin'
+    'int': 'built_in',
+    'real': 'built_in',
+    'string': 'built_in',
+    'char': 'built_in',
+    'bool': 'built_in'
   },
   slashComments: true
 });

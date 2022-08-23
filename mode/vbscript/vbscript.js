@@ -240,7 +240,7 @@ CodeMirror.defineMode("vbscript", function(conf, parserConf) {
         }
 
         if (stream.match(builtinFuncs)) {
-            return 'builtin';
+            return 'built_in';
         }
 
         if (stream.match(builtinObjs)){
@@ -291,8 +291,8 @@ CodeMirror.defineMode("vbscript", function(conf, parserConf) {
             style = state.tokenize(stream, state);
 
             current = stream.current();
-            if (style && (style.substr(0, 8) === 'variable' || style==='builtin' || style==='keyword')){//|| knownWords.indexOf(current.substring(1)) > -1) {
-                if (style === 'builtin' || style === 'keyword') style='variable';
+            if (style && (style.substr(0, 8) === 'variable' || style==='built_in' || style==='keyword')){//|| knownWords.indexOf(current.substring(1)) > -1) {
+                if (style === 'built_in' || style === 'keyword') style='variable';
                 if (knownWords.indexOf(current.substr(1)) > -1) style='variable-2';
 
                 return style;

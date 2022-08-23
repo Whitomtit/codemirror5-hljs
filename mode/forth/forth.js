@@ -91,7 +91,7 @@
       if (stt.state === '') { // interpretation
         if (stream.match(/^(\]|:NONAME)(\s|$)/i)) {
           stt.state = ' compilation';
-          return 'builtin compilation';
+          return 'built_in compilation';
         }
         mat = stream.match(/^(\:)\s+(\S+)(\s|$)+/);
         if (mat) {
@@ -106,21 +106,21 @@
         }
         mat = stream.match(/^(\'|\[\'\])\s+(\S+)(\s|$)+/);
         if (mat) {
-          return 'builtin' + stt.state;
+          return 'built_in' + stt.state;
         }
         } else { // compilation
         // ; [
         if (stream.match(/^(\;|\[)(\s)/)) {
           stt.state = '';
           stream.backUp(1);
-          return 'builtin compilation';
+          return 'built_in compilation';
         }
         if (stream.match(/^(\;|\[)($)/)) {
           stt.state = '';
-          return 'builtin compilation';
+          return 'built_in compilation';
         }
         if (stream.match(/^(POSTPONE)\s+\S+(\s|$)+/)) {
-          return 'builtin';
+          return 'built_in';
         }
       }
 
@@ -139,7 +139,7 @@
 
           // core words
           if (searchWordList(stt.coreWordList, mat[1]) !== undefined) {
-            return 'builtin' + stt.state;
+            return 'built_in' + stt.state;
           }
           if (searchWordList(stt.immediateWordList, mat[1]) !== undefined) {
             return 'keyword' + stt.state;

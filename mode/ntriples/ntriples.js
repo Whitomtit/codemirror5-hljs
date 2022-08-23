@@ -141,7 +141,7 @@ CodeMirror.defineMode("ntriples", function() {
           state.bnodes.push(parsedBNode);
           stream.next();
           transitState(state, ' ');
-          return 'builtin';
+          return 'built_in';
       }
       if(ch == '"') {
           transitState(state, ch);

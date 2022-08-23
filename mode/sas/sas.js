@@ -65,7 +65,7 @@
     define('def', 'varfmt varinfmt varlabel varlen varname varnum varray varrayx vartype verify vformat vformatd vformatdx vformatn vformatnx vformatw vformatwx vformatx vinarray vinarrayx vinformat vinformatd vinformatdx vinformatn vinformatnx vinformatw vinformatwx vinformatx vlabel vlabelx vlength vlengthx vname vnamex vnferr vtype vtypex weekday', ['inDataStep']);
     define('def', 'zipfips zipname zipnamel zipstate', ['inDataStep']);
     define('def', 'put putc putn', ['inDataStep']);
-    define('builtin', 'data run', ['inDataStep']);
+    define('built_in', 'data run', ['inDataStep']);
 
 
     //proc
@@ -75,7 +75,7 @@
     define('def', '%if %end %end; %else %else; %do %do; %then', ['inMacro']);
 
     //everywhere
-    define('builtin', 'proc run; quit; libname filename %macro %mend option options', ['ALL']);
+    define('built_in', 'proc run; quit; libname filename %macro %mend option options', ['ALL']);
 
     define('def', 'footnote title libname ods', ['ALL']);
     define('def', '%let %put %global %sysfunc %eval ', ['ALL']);
@@ -182,7 +182,7 @@
       if (state.inDataStep) {
         if (word === 'run;' || stream.match(/run\s;/)) {
           state.inDataStep = false;
-          return 'builtin';
+          return 'built_in';
         }
         // variable formats
         if ((word) && stream.next() === '.') {
@@ -206,7 +206,7 @@
       if (state.inProc) {
         if (word === 'run;' || word === 'quit;') {
           state.inProc = false;
-          return 'builtin';
+          return 'built_in';
         }
         // do we have a proc keyword
         if (word && words.hasOwnProperty(word) &&
@@ -221,7 +221,7 @@
         if (word === '%mend') {
           if (stream.peek() === ';') stream.next();
           state.inMacro = false;
-          return 'builtin';
+          return 'built_in';
         }
         if (word && words.hasOwnProperty(word) &&
             (words[word].state.indexOf("inMacro") !== -1 ||
@@ -241,17 +241,17 @@
         if (word === 'data' && /=/.test(stream.peek()) === false) {
           state.inDataStep = true;
           state.nextword = true;
-          return 'builtin';
+          return 'built_in';
         }
         if (word === 'proc') {
           state.inProc = true;
           state.nextword = true;
-          return 'builtin';
+          return 'built_in';
         }
         if (word === '%macro') {
           state.inMacro = true;
           state.nextword = true;
-          return 'builtin';
+          return 'built_in';
         }
         if (/title[1-9]/.test(word)) return 'def';
 

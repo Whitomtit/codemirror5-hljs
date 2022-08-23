@@ -267,7 +267,7 @@
 
     // Handle words
     if (stream.match(keywords)) { return 'keyword'; }
-    if (stream.match(builtins)) { return 'builtin'; }
+    if (stream.match(builtins)) { return 'built_in'; }
     if (stream.match(identifiers)) { return 'variable'; }
 
     if (stream.match(singleOperators) || stream.match(boolOperators)) {

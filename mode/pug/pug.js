@@ -15,7 +15,7 @@ CodeMirror.defineMode("pug", function (config) {
   // token types
   var KEYWORD = 'keyword';
   var DOCTYPE = 'meta';
-  var ID = 'builtin';
+  var ID = 'built_in';
   var CLASS = 'qualifier';
 
   var ATTRS_NEST = {

@@ -34,7 +34,7 @@ CodeMirror.defineMode('shell', function() {
 
   define('atom', commonAtoms);
   define('keyword', commonKeywords);
-  define('builtin', commonCommands);
+  define('built_in', commonCommands);
 
   function tokenBase(stream, state) {
     if (stream.eatSpace()) return null;
